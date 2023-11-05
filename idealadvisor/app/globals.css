@@ -13,9 +13,13 @@ body {
 }
 
 /*--------------Home Page---------------*/
+.homePage{
+  @apply
+  h-screen
+}
 .presentation-page{
   background-image: url("../public/image/background.jpg");
-  background-size: 1500px auto;
+  background-size: 1700px auto;
   background-position: 0vw 50%;
   background-repeat: no-repeat;
   display: flex;
@@ -28,12 +32,13 @@ body {
   @apply
   transition-all
   duration-500
+  ease-in
 }
 .presentation-page.changeScale{
   margin: auto;
   height: 75vh;
   @apply
-  w-4/5
+  w-11/12
   rounded-3xl
 }
 /*---Button---*/
@@ -112,21 +117,80 @@ body {
   width: 205px;
   height: 205px;
 }
-.hide{
+.hideLN{
   width: 0;
   padding-left: 0;
+  animation: disappear 1000ms forwards;
 }
+.hide{
+  width: 0;
+  @apply
+  hidden
+}
+/*---animation home page---*/
 @keyframes disappear {
   from{
-    
+    width: 50%;
+  }
+  to{
+    width: 0;
+    @apply
+    hidden
   }
 }
 
 /*-----------Presentation Page-----------*/
-h2{
-  color: white;
+/*---Card---*/
+.fondateur{
+  @apply
+  rounded-full
 }
-.text-explanation{
-  color: white;
+.presentation-card{
+  @apply
+    flex
+    justify-between
+    items-center
+    w-4/5
+    h-4/5
+}
+.title-card{
+  @apply
+    flex
+    flex-col
+    items-center
+    justify-around
+    text-white
+    w-2/6
+    h-3/4
+    bg-red-600
+    opacity-80
+    rounded-3xl
+  p-5
+}
+.title-card > h2{
+  font-size: 1.5rem;
+  @apply
+  text-center
+}
+.description-card{
+  @apply
+    w-3/5
+    h-3/4
+    flex
+    items-center
+    bg-white
+    opacity-70
+    rounded-2xl
+    p-5
+}
+.text-card{
+  @apply
+  text-black
+  h-fit
+
+}
+.text-card > ul{
+  padding-left: 35px;
+  list-style-type: circle;
 }
 
