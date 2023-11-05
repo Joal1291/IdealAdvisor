@@ -1,113 +1,150 @@
-import Image from 'next/image'
+"use client"
+import {useState, useRef, useEffect} from "react";
 
+import {AiOutlineArrowLeft} from "react-icons/ai"
 export default function Home() {
+    const [entryPage, setEntryPage] = useState(true)
+    const [quiEstIdeal, setQuiEstIdeal] = useState(false)
+    const [quiSuisJe, setQuiSuisJe] = useState(false)
+    const [directorship, setDirectorship] = useState(false)
+    const [financialOrganisation, setFinancialOrganisation] = useState(false)
+    const [logoAndName, setLogoAndName] = useState(false)
+
+    const bgpresention = document.querySelector(".presentation-page");
+    const handleClickEntry = () => {
+        console.log("ca fonctionne");
+    }
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.jsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="flex w-full h-fit ">
+        <div className="presentation-page">
+            <buton className="entry-button" type="button" onClick={(e) => {
+                bgpresention.classList.toggle("changescale")
+            }}>
+                <p className={"text-button"}>Entrer</p>
+                <AiOutlineArrowLeft className={"arrow"}/>
+            </buton>
+            {/*<div className={"qui-est-ideal"}>*/}
+            {/*    <h2>*/}
+            {/*        Qui est IDEAL ADVISOR ?*/}
+            {/*    </h2>*/}
+            {/*    <div>*/}
+            {/*        <p className="text-explanation">*/}
+            {/*            IDEAL ADVISOR est une société spécialisée en gestion et en organisation des départements financiers.<br/>*/}
+            {/*            <br/>*/}
+            {/*            IDEAL ADVISOR se démarque par sa maitrise des sujets techniques et  règlementaires ; expertise dédiée en gestion de fonds et en organisation, en particulier au sein de sociétés de gestion de portefeuille immobilier et Private Equity.<br/>*/}
+            {/*            <br/>*/}
+            {/*            La maitrise des sujets financiers, comptables, fiscaux et juridiques permet d’être le garant de l’information financière de ses clients.<br/>*/}
+            {/*            <br/>*/}
+            {/*            Faire appel à IDEAL ADVISOR, c est sélectionner un partenaire de confiance en organisation des départements financiers et en représentant légal.<br/>*/}
+            {/*        </p>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
+            {/*<div className={"qui-suis-je"}>*/}
+            {/*    <h2>*/}
+            {/*        Qui suis-je?*/}
+            {/*    </h2>*/}
+            {/*    <div>*/}
+            {/*        <p className="text-explanation">*/}
+            {/*        Thomas Blin, fondateur de IDEAL ADVISOR<br/>*/}
+            {/*            <br/>*/}
+            {/*        Diplômé d’expertise comptable et de commissariat aux comptes,*/}
+            {/*        14 ans d’expérience dans les métiers de la finance, banque, comptabilité, fiscalité et de l’audit.<br/>*/}
+            {/*            <br/>*/}
+            {/*        Evolution dans les domaines de la finance particulièrement en immobilier et gestion de fonds d’investissement auprès d’investisseurs institutionnels.<br/>*/}
+            {/*        Expérience : SwissLife AM, BNP Paribas, KPMG…<br/>*/}
+            {/*            <br/>*/}
+            {/*        Expertise :*/}
+            {/*            <ul>*/}
+            {/*                <li>Accounting & Tax, clients internationaux, multi GAAP…</li>*/}
+            {/*                <li>Legal, gestion administrative corporate, constitution, fusion…</li>*/}
+            {/*                <li>Finance, Business Plan, représentant légal et conformité…</li>*/}
+            {/*                <li>Fund management, AIFM, Valuation, LTV, structuration…</li>*/}
+            {/*            </ul>*/}
+            {/*        </p>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
+            {/*<div className={"directorship"}>*/}
+            {/*    <h2>*/}
+            {/*        Constitution<br/>*/}
+            {/*        Domiciliation<br/>*/}
+            {/*        Secrétariat<br/>*/}
+            {/*        Général<br/>*/}
+            {/*        Administrateur<br/>*/}
+            {/*        OFFRE<br/>*/}
+            {/*        DIRECTORSHIP<br/>*/}
+            {/*        <br/>*/}
+            {/*        IMAGE ICI*/}
+            {/*    </h2>*/}
+                {/*<div>*/}
+                {/*    <p className="text-explanation">*/}
+                {/*    Partenaire de confiance en France dans la gestion*/}
+
+                {/*    La maitrise des sujets règlementaires, comptables, fiscaux et juridiques permet à IDEAL ADVISOR de se positionner comme garant de l’information financière de ses clients en proposant la mission de représentant légal / mandat social.*/}
+
+                {/*    Les services trustee portent sur la gestion courante corporate :*/}
+                {/*    <ul>*/}
+                {/*        <li>*/}
+                {/*            Représentation légale, animation, constitution, liquidation*/}
+                {/*        </li>*/}
+                {/*        <li>*/}
+                {/*            Coordination et supervision des différentes parties prenantes*/}
+                {/*        </li>*/}
+                {/*        <li>*/}
+                {/*            Respect des obligations légales et fiscales*/}
+                {/*        </li>*/}
+                {/*        <li>*/}
+                {/*            Assistance au financement bancaire et non bancaire*/}
+                {/*        </li>*/}
+                {/*        <li>*/}
+                {/*            Assistance aux acquisitions et cessions*/}
+                {/*        </li>*/}
+                {/*        <li>*/}
+                {/*            Conseil dans la stratégique des FIA et SPV…*/}
+                {/*        </li>*/}
+                {/*    </ul>*/}
+                {/*    </p>*/}
+                {/*</div>*/}
+            {/*</div>*/}
+            {/*<div className={"financial-organisation"}>*/}
+            {/*    <h2>*/}
+            {/*        OFFRE FINANCE<br/>*/}
+            {/*        ORGANISATION<br/>*/}
+            {/*        <br/>*/}
+            {/*        Transformation de la direction financière & pilotage de la performance<br/>*/}
+            {/*    </h2>*/}
+            {/*    <div>*/}
+            {/*        <p className={"text-explanation"}>*/}
+            {/*            Partenaire de l’organisation des départements financiers<br/>*/}
+
+            {/*            L’offre couvre l’ensemble des process relatifs à la performance et l'évaluation des FIA :*/}
+            {/*            <ul>*/}
+            {/*                <li>*/}
+            {/*                    Centralisation et contrôle des données de valorisation*/}
+            {/*                </li>*/}
+            {/*                <li>*/}
+            {/*                    Gestion financière prévisionnelle / modélisation et analyse des écarts*/}
+            {/*                </li>*/}
+            {/*                <li>*/}
+            {/*                    Validation des transactions, augmentations/diminutions de capital, dividendes, les primes d'émission, les SHL...*/}
+            {/*                </li>*/}
+            {/*                <li>*/}
+            {/*                    Coordination entre les équipes internes et externes tels comptables, dépositaires, auditeurs, AM, banques etc…*/}
+            {/*                </li>*/}
+            {/*                <li>*/}
+            {/*                    Suivi et anticipation des ratios bancaires, réglementaires et statutaires (stress tests, AIFM, PRIIPS, LTV, Leverage, ICR DSCR etc.) ainsi que le suivi fiscal (obligation de distribution, IS, TVA, WHT…)*/}
+            {/*                </li>*/}
+            {/*            </ul>*/}
+            {/*        </p>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+        <div className="logo-and-name">
+            <p className="companyName">IDEAL<br/>ADVISOR</p>
+            <div className="logo">
+                <div className="logo-blue-part"></div>
+                <div className="logo-red-part"></div>
+            </div>
+        </div>
     </main>
   )
 }
