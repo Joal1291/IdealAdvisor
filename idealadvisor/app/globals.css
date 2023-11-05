@@ -9,7 +9,7 @@ body {
     justify-center
     items-center
     w-full
-    h-fit
+    h-screen
 }
 
 /*--------------Home Page---------------*/
@@ -23,11 +23,18 @@ body {
   align-items: center;
   width: 50%;
   height: 100vh;
-}
-.presentation-page.changescale{
+  margin: 0;
+  transition: margin 500ms;
   @apply
-  h-1/2
-  w-1/2
+  transition-all
+  duration-500
+}
+.presentation-page.changeScale{
+  margin: auto;
+  height: 75vh;
+  @apply
+  w-4/5
+  rounded-3xl
 }
 /*---Button---*/
 .entry-button{
@@ -46,7 +53,7 @@ body {
   hover:w-16
   hover:rotate-180
   transition-all
-  duration-500
+  duration-1000
 }
 .entry-button:hover > .text-button{
   @apply
@@ -71,6 +78,8 @@ body {
   items-center
   justify-center
   cursor-default
+  transition-all
+  duration-1000
 }
 .companyName{
   font-size: 9rem;
@@ -102,6 +111,15 @@ body {
   left: 108px;
   width: 205px;
   height: 205px;
+}
+.hide{
+  width: 0;
+  padding-left: 0;
+}
+@keyframes disappear {
+  from{
+    
+  }
 }
 
 /*-----------Presentation Page-----------*/

@@ -3,22 +3,23 @@ import {useState, useRef, useEffect} from "react";
 
 import {AiOutlineArrowLeft} from "react-icons/ai"
 export default function Home() {
+
+    const backgroundHome = useRef(null)
+    const logoAndName = useRef(null)
+
     const [entryPage, setEntryPage] = useState(true)
     const [quiEstIdeal, setQuiEstIdeal] = useState(false)
     const [quiSuisJe, setQuiSuisJe] = useState(false)
     const [directorship, setDirectorship] = useState(false)
     const [financialOrganisation, setFinancialOrganisation] = useState(false)
-    const [logoAndName, setLogoAndName] = useState(false)
 
-    const bgpresention = document.querySelector(".presentation-page");
-    const handleClickEntry = () => {
-        console.log("ca fonctionne");
-    }
   return (
-    <main className="flex w-full h-fit ">
-        <div className="presentation-page">
+    <main className="flex w-full h-fit transition-all duration-500">
+        <div className="presentation-page" ref={backgroundHome}>
             <buton className="entry-button" type="button" onClick={(e) => {
-                bgpresention.classList.toggle("changescale")
+                backgroundHome.current.classList.toggle("changeScale")
+                logoAndName.current.classList.toggle("hide")
+                console.log('je suis présent')
             }}>
                 <p className={"text-button"}>Entrer</p>
                 <AiOutlineArrowLeft className={"arrow"}/>
@@ -138,7 +139,7 @@ export default function Home() {
             {/*    </div>*/}
             {/*</div>*/}
         </div>
-        <div className="logo-and-name">
+        <div className="logo-and-name" ref={logoAndName}>
             <p className="companyName">IDEAL<br/>ADVISOR</p>
             <div className="logo">
                 <div className="logo-blue-part"></div>
