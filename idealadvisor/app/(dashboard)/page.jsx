@@ -1,6 +1,9 @@
 "use client"
 
-import {useState, useRef, useEffect} from "react";
+import {useState, useRef, useEffect, forwardRef} from "react";
+
+// --- Component ---
+import Navbar from "@/app/components/Navbar";
 
 // --- Image ---
 import Image from "next/image"
@@ -8,25 +11,82 @@ import handShake from "../../public/image/handshake.png"
 import fondateur from "../../public/image/thomasblin.png"
 import listimg from "../../public/image/liste.png"
 import hausseimg from "../../public/image/hausseimg.png"
+import Dotimg from "../../public/image/dotimg.png"
+import Circleimg from "../../public/image/circleimg.png"
 
 // --- Icons ---
 import {AiOutlineArrowLeft} from "react-icons/ai"
+
 
 export default function Home() {
 
     const backgroundHome = useRef(null)
     const logoAndName = useRef(null)
     const logoR = useRef(null)
-    const logoB =useRef(null)
+    const logoB = useRef(null)
     const name = useRef(null)
-    const entryButton =useRef(null)
+    const entryButton = useRef(null)
+    const navbar = forwardRef(null)
+    const dotnav = useRef(null)
+    const circle1 = useRef(null)
+    const circle2 = useRef(null)
+    const circle3 = useRef(null)
+    const circle4 = useRef(null)
 
     const [quiEstIdeal, setQuiEstIdeal] = useState(false)
     const [quiSuisJe, setQuiSuisJe] = useState(false)
     const [directorship, setDirectorship] = useState(false)
-    const [financialOrganisation, setFinancialOrganisation] = useState(true)
+    const [financialOrganisation, setFinancialOrganisation] = useState(false)
+
+    const handleclick = (value) => {
+        switch(value){
+            case "quiestideal":
+                setQuiEstIdeal(true)
+                setQuiSuisJe(false)
+                setDirectorship(false)
+                setFinancialOrganisation(false)
+                circle1.current.classList.add("circle-visible")
+                circle2.current.classList.remove("circle-visible")
+                circle3.current.classList.remove("circle-visible")
+                circle4.current.classList.remove("circle-visible")
+                break;
+            case "quisuisje":
+                setQuiEstIdeal(false)
+                setQuiSuisJe(true)
+                setDirectorship(false)
+                setFinancialOrganisation(false)
+                circle1.current.classList.remove("circle-visible")
+                circle2.current.classList.add("circle-visible")
+                circle3.current.classList.remove("circle-visible")
+                circle4.current.classList.remove("circle-visible")
+                break;
+            case "director":
+                setQuiEstIdeal(false)
+                setQuiSuisJe(false)
+                setDirectorship(true)
+                setFinancialOrganisation(false)
+                circle1.current.classList.remove("circle-visible")
+                circle2.current.classList.remove("circle-visible")
+                circle3.current.classList.add("circle-visible")
+                circle4.current.classList.remove("circle-visible")
+                break;
+            case "financial":
+                setQuiEstIdeal(false)
+                setQuiSuisJe(false)
+                setDirectorship(false)
+                setFinancialOrganisation(true)
+                circle1.current.classList.remove("circle-visible")
+                circle2.current.classList.remove("circle-visible")
+                circle3.current.classList.remove("circle-visible")
+                circle4.current.classList.add("circle-visible")
+                break;
+        }
+    }
 
   return (
+  <>
+    <Navbar ref={navbar}></Navbar>
+
     <main className="flex w-full h-fit transition-all duration-500 homePage">
         <div className="presentation-page" ref={backgroundHome}>
             <buton className="entry-button" ref={entryButton} type="button" onClick={(e) => {
@@ -36,13 +96,18 @@ export default function Home() {
                 logoR.current.classList.toggle("hide")
                 logoB.current.classList.toggle("hide")
                 entryButton.current.classList.toggle("hide")
+                navbar.current.classList.toggle("appear")
+                dotnav.current.classList.toggle("dotNavappear")
+                circle1.current.classList.toggle("circle-visible")
+                setQuiEstIdeal(true)
+                // card1.current.classList.toggle("appear")
 
                 console.log('je suis présent')
             }}>
                 <p className={"text-button"}>Entrer</p>
                 <AiOutlineArrowLeft className={"arrow"}/>
             </buton>
-            <button> je suis la </button>
+
             {/*---------------------------DIV qui est ideal------------------------*/}
             {quiEstIdeal && (
                 <div className={"presentation-card"}>
@@ -176,7 +241,7 @@ export default function Home() {
                         </h2>
                     </div>
                     <div className={"description-card"}>
-                        <p className={"text-card"}>
+                        <span className={"text-card"}>
                             Partenaire de l’organisation des départements financiers<br/><br/>
 
                             L’offre couvre l’ensemble des process relatifs à la performance et l'évaluation des FIA :
@@ -197,15 +262,83 @@ export default function Home() {
                                     Suivi et anticipation des ratios bancaires, réglementaires et statutaires (stress tests, AIFM, PRIIPS, LTV, Leverage, ICR DSCR etc.) ainsi que le suivi fiscal (obligation de distribution, IS, TVA, WHT…)
                                 </li>
                             </ul>
-                        </p>
+                        </span>
                     </div>
                 </div>
             )}
+            <div className={"dotNav"} ref={dotnav}>
+                <span className={"singleDot"} onClick={(e) => handleclick("quiestideal")}>
+                    <Image
+                        className={"dot"}
+                        src={Dotimg}
+                        width={14}
+                        height={14}
+                        alt={"dot of nav"}
+                    />
+                    <Image
+                        className={"circleDot"}
+                        ref={circle1}
+                        src={Circleimg}
+                        width={25}
+                        height={25}
+                        alt={"circle of dot nav"}
+                    />
 
-
-                <button>je suis la </button>
-
+                </span>
+                <span className={"singleDot"} onClick={(e) => handleclick("quisuisje")}>
+                    <Image
+                        className={"dot"}
+                        src={Dotimg}
+                        width={14}
+                        height={14}
+                        alt={"dot of nav"}
+                    />
+                    <Image
+                        className={"circleDot"}
+                        ref={circle2}
+                        src={Circleimg}
+                        width={25}
+                        height={25}
+                        alt={"circle of dot nav"}
+                    />
+                </span>
+                <span className={"singleDot"} onClick={(e) => handleclick("director")}>
+                    <Image
+                        className={"dot"}
+                        src={Dotimg}
+                        width={14}
+                        height={14}
+                        alt={"dot of nav"}
+                    />
+                    <Image
+                        className={"circleDot"}
+                        ref={circle3}
+                        src={Circleimg}
+                        width={25}
+                        height={25}
+                        alt={"circle of dot nav"}
+                    />
+                </span>
+                <span className={"singleDot"} onClick={(e) => handleclick("financial")}>
+                    <Image
+                        className={"dot"}
+                        src={Dotimg}
+                        width={14}
+                        height={14}
+                        alt={"dot of nav"}
+                    />
+                    <Image
+                        className={"circleDot"}
+                        ref={circle4}
+                        src={Circleimg}
+                        width={25}
+                        height={25}
+                        alt={"circle of dot nav"}
+                    />
+                </span>
+            </div>
         </div>
+
         <div className="logo-and-name" ref={logoAndName}>
             <p className="companyName" ref={name}>IDEAL<br/>ADVISOR</p>
             <div className="logo">
@@ -214,5 +347,6 @@ export default function Home() {
             </div>
         </div>
     </main>
+  </>
   )
 }

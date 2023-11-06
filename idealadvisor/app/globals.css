@@ -6,6 +6,7 @@
 body {
   @apply
     flex
+    flex-col
     justify-center
     items-center
     w-full
@@ -16,6 +17,7 @@ body {
 .homePage{
   @apply
   h-screen
+  relative
 }
 .presentation-page{
   background-image: url("../public/image/background.jpg");
@@ -23,7 +25,7 @@ body {
   background-position: 0vw 50%;
   background-repeat: no-repeat;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   width: 50%;
   height: 100vh;
@@ -31,12 +33,12 @@ body {
   transition: margin 500ms;
   @apply
   transition-all
-  duration-500
+  duration-1000
   ease-in
 }
 .presentation-page.changeScale{
   margin: auto;
-  height: 75vh;
+  height: 70vh;
   @apply
   w-11/12
   rounded-3xl
@@ -122,11 +124,6 @@ body {
   padding-left: 0;
   animation: disappear 1000ms forwards;
 }
-.hide{
-  width: 0;
-  @apply
-  hidden
-}
 /*---animation home page---*/
 @keyframes disappear {
   from{
@@ -139,32 +136,74 @@ body {
   }
 }
 
+/*---------------NavBar------------------*/
+.navbar{
+  color: #013187;
+  height: 0;
+  opacity: 0;
+  @apply
+    items-center
+    justify-between
+    w-full
+    pl-20
+    pr-20
+    transition-all
+    duration-1000
+}
+.menu-logo{
+  @apply
+  w-12
+  h-12
+}
+.appear{
+  height: 10vh;
+  opacity: 1;
+  @apply
+  flex
+}
 /*-----------Presentation Page-----------*/
 /*---Card---*/
 .fondateur{
+  /*image*/
   @apply
   rounded-full
 }
 .presentation-card{
+  animation: apparition 1s forwards;
   @apply
     flex
     justify-between
     items-center
     w-4/5
     h-4/5
+    opacity-0
+}
+@keyframes apparition{
+  from{
+    opacity: 0;
+  }
+  80%{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+.presentation-card-visible{
+  opacity: 1;
 }
 .title-card{
   @apply
-    flex
-    flex-col
-    items-center
-    justify-around
-    text-white
-    w-2/6
-    h-3/4
-    bg-red-600
-    opacity-80
-    rounded-3xl
+  flex
+  flex-col
+  items-center
+  justify-around
+  text-white
+  w-2/6
+  h-3/4
+  bg-red-600
+  /*opacity-80*/
+  rounded-3xl
   p-5
 }
 .title-card > h2{
@@ -174,14 +213,14 @@ body {
 }
 .description-card{
   @apply
-    w-3/5
-    h-3/4
-    flex
-    items-center
-    bg-white
-    opacity-70
-    rounded-2xl
-    p-5
+  w-3/5
+  h-3/4
+  flex
+  items-center
+  bg-white
+  /*opacity-70*/
+  rounded-2xl
+  p-10
 }
 .text-card{
   @apply
@@ -192,5 +231,60 @@ body {
 .text-card > ul{
   padding-left: 35px;
   list-style-type: circle;
+}
+.hide{
+  width: 0;
+  @apply
+  hidden
+}
+/*---Dot Nav---*/
+.dotNav{
+  animation: apparition 1s forwards;
+  @apply
+    w-10
+    bg-white
+    opacity-80
+    h-2/5
+    flex
+    flex-col
+    justify-around
+    items-center
+    hidden
+    rounded-3xl
+    opacity-0
+}
+.dotNavappear{
+  display: flex;
+}
+.singleDot{
+  @apply
+  flex
+  relative
+  h-fit
+
+}
+.circleDot{
+  position: absolute;
+  max-width: 100px;
+  transform: translate(-5.5px, -5.5px);
+  @apply
+    opacity-0
+  transition-all
+  duration-200
+  z-10
+}
+.circleDot:hover{
+  opacity: 1;
+  position: absolute;
+  max-width: 100px;
+  transform-origin: center;
+  transform: translate(-5.5px, -5.5px);
+}
+.circle-visible{
+  opacity: 1;
+  position: absolute;
+  max-width: 100px;
+  transform-origin: center;
+  transform: translate(-5.5px, -5.5px);
 }
 
