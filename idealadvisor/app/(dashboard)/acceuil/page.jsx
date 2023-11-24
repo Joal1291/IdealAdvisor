@@ -1,7 +1,15 @@
+
+import Navbar from "@/app/components/Navbar";
 export default function Acceuil() {
     return(
-        <main>
+        <>
+            <Navbar className={"navbar"}/>
+            <main className={"main-presentation"}>
+                <div className={"presentation-page"}>
 
-        </main>
+                </div>
+            </main>
+        </>
+
     )
 }

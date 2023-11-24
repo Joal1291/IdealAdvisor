@@ -19,29 +19,42 @@ body {
   h-screen
   relative
 }
-.presentation-page{
+.entry-page{
   background-image: url("../public/image/background.jpg");
-  background-size: 1700px auto;
+  background-size: 2000px auto;
   background-position: 0vw 50%;
   background-repeat: no-repeat;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   width: 50%;
-  height: 100vh;
+  height: 100%;
   margin: 0;
   transition: margin 500ms;
-  @apply
-  transition-all
-  duration-1000
-  ease-in
+  box-shadow: 5px 5px 15px  black;
+  border: 1px solid black;
 }
-.presentation-page.changeScale{
-  margin: auto;
-  height: 70vh;
-  @apply
-  w-11/12
-  rounded-3xl
+.main-presentation{
+  height: 85vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.presentation-page{
+  background-image: url("../public/image/background.jpg");
+  background-size: 2000px auto;
+  background-position: 0vw 50%;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 85%;
+  height: 80%;
+  margin: 0;
+  border-radius: 50px;
+  box-shadow: 5px 5px 15px  black;
+  border: 1px solid black;
 }
 /*---Button---*/
 .entry-button{
@@ -139,14 +152,13 @@ body {
 /*---------------NavBar------------------*/
 .navbar{
   color: #013187;
-  height: 0;
-  opacity: 0;
+  height: 15vh;
   @apply
+    flex
     items-center
     justify-between
     w-full
-    pl-20
-    pr-20
+    p-10
     transition-all
     duration-1000
 }
@@ -154,12 +166,6 @@ body {
   @apply
   w-12
   h-12
-}
-.appear{
-  height: 10vh;
-  opacity: 1;
-  @apply
-  flex
 }
 /*-----------Presentation Page-----------*/
 /*---Card---*/
@@ -169,7 +175,7 @@ body {
   rounded-full
 }
 .presentation-card{
-  animation: apparition 1s forwards;
+  animation: apparition 0.5s forwards;
   @apply
     flex
     justify-between
