@@ -245,8 +245,8 @@ body {
 }
 /*---Dot Nav---*/
 .dotNav{
-  animation: apparition 1s forwards;
   @apply
+    flex
     w-10
     bg-white
     opacity-80
@@ -255,12 +255,7 @@ body {
     flex-col
     justify-around
     items-center
-    hidden
     rounded-3xl
-    opacity-0
-}
-.dotNavappear{
-  display: flex;
 }
 .singleDot{
   @apply
