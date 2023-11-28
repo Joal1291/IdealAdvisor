@@ -1,0 +1,96 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "Qui est IDEAL ADVISOR ?",
+      "description": "IDEAL ADVISOR est une société spécialisée en gestion et en organisation des départements financiers. \nIDEAL ADVISOR se démarque par sa maitrise des sujets techniques et  règlementaires ; expertise dédiée en gestion de fonds et en organisation, en particulier au sein de sociétés de gestion de portefeuille immobilier et Private Equity. \nLa maitrise des sujets financiers, comptables, fiscaux et juridiques permet d’être le garant de l’information financière de ses clients. \nFaire appel à IDEAL ADVISOR, c est sélectionner un partenaire de confiance en organisation des départements financiers et en représentant légal.",
+      "image": "../../../public/image/handshake.png"
+    },
+    {
+      "id": 2,
+      "title": "Qui suis-je?",
+      "description": " Thomas Blin, fondateur de IDEAL ADVISOR \nDiplômé d’expertise comptable et de commissariat aux comptes,\n14 ans d’expérience dans les métiers de la finance, banque, comptabilité, fiscalité et de l’audit. \nEvolution dans les domaines de la finance particulièrement en immobilier et gestion de fonds d’investissement auprès d’investisseurs institutionnels. \nExpérience : SwissLife AM, BNP Paribas, KPMG…",
+      "image": "../../../public/image/fondateur.png",
+      "list": [
+        {
+          "id": 1,
+          "text": "Accounting & Tax, clients internationaux, multi GAAP…"
+        },
+        {
+          "id" : 2,
+          "text": "Legal, gestion administrative corporate, constitution, fusion…"
+        },
+        {
+          "id" : 3,
+          "text": "Finance, Business Plan, représentant légal et conformité…"
+        },
+        {
+          "id" : 4,
+          "text" : "Fund management, AIFM, Valuation, LTV, structuration…"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Constitution \nDomiciliation \nSecrétariat \nGenéral \nAdministrateur",
+      "description": "Partenaire de confiance en France dans la gestion \nLa maitrise des sujets règlementaires, comptables, fiscaux et juridiques permet à IDEAL ADVISOR de se positionner comme garant de l’information financière de ses clients en proposant la mission de représentant légal / mandat social.\nLes services trustee portent sur la gestion courante corporate :",
+      "image": "../../../public/image/listimg.png",
+      "list": [
+        {
+          "id": 1,
+          "text": "Représentation légale, animation, constitution, liquidation"
+        },
+        {
+          "id": 2,
+          "text": "Coordination et supervision des différentes parties prenantes"
+        },
+        {
+          "id": 3,
+          "text": "Respect des obligations légales et fiscales"
+        },
+        {
+          "id": 4,
+          "text": "Assistance au financement bancaire et non bancaire"
+        },
+        {
+          "id": 5,
+          "text": "Assistance aux acquisitions et cessions"
+        },
+        {
+          "id": 6,
+          "text": "Conseil dans la stratégique des FIA et SPV…"
+        }
+
+      ]
+    },
+    {
+      "id": 4,
+      "title": "OFFRE FINANCE \nORGANISATION \nTransformation de la direction financière & pilotage de la performance",
+      "description": "IDEAL ADVISOR est une société spécialisée en gestion et en organisation des départements financiers. \nIDEAL ADVISOR se démarque par sa maitrise des sujets techniques et  règlementaires ; expertise dédiée en gestion de fonds et en organisation, en particulier au sein de sociétés de gestion de portefeuille immobilier et Private Equity. \nLa maitrise des sujets financiers, comptables, fiscaux et juridiques permet d’être le garant de l’information financière de ses clients. \nFaire appel à IDEAL ADVISOR, c est sélectionner un partenaire de confiance en organisation des départements financiers et en représentant légal.",
+      "image": "../../../public/image/hausseimg.png",
+      "list": [
+        {
+          "id": 1,
+          "text": "Centralisation et contrôle des données de valorisation"
+        },
+        {
+          "id": 2,
+          "text": "Gestion financière prévisionnelle / modélisation et analyse des écarts"
+        },
+        {
+          "id": 3,
+          "text": "Validation des transactions, augmentations/diminutions de capital, dividendes, les primes d'émission, les SHL..."
+        },
+        {
+          "id": 4,
+          "text": "Coordination entre les équipes internes et externes tels comptables, dépositaires, auditeurs, AM, banques etc…"
+        },
+        {
+          "id": 5,
+          "text": "Suivi et anticipation des ratios bancaires, réglementaires et statutaires (stress tests, AIFM, PRIIPS, LTV, Leverage, ICR DSCR etc.) ainsi que le suivi fiscal (obligation de distribution, IS, TVA, WHT…)"
+        }
+      ]
+    }
+
+  ]
+}
