@@ -8,7 +8,7 @@ Bienvenue dans l'application IDEAL ADVISOR !
 
 IDEAL ADVISOR est une application web basée sur Next.js conçue pour l'entreprise du même nom fondée par Thomas Blin. Cette application offre une présentation rapide de l'entreprise, un moyen de contact et pour finir un outil de gestion clientèle à son utilisateur.
 
-## Installation
+<!-- ## Installation
 
 Pour obtenir une copie de ce projet et le faire fonctionner localement, suivez ces étapes :
 
@@ -35,4 +35,4 @@ Créez une branche pour votre contribution :
 
 ```bash
 git checkout -b ma-contribution
-Effectuez vos modifications et créez une demande de tirage (pull request) pour les examens.
+Effectuez vos modifications et créez une demande de tirage (pull request) pour les examens. -->
